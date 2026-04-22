@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News & Updates | IT Simple Solutions Inc.</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="simple.css" />
+  </head>
+  <body>
+  <script src="navbar-loader.js"></script>
+    <main>
+      <section class="updates-hero">
+        <h1>NEWS & UPDATES</h1>
+      </section>
+
+      <section class="news-container">
+        <div class="news-card">
+          <div class="news-image">
+            <img src="updatepicture.jpg" alt="We Are Accepting OJTs!" />
+            <p class="date">February 11, 2026</p>
+          </div>
+          <div class="news-content">
+            <h2>We Are Accepting OJTs!</h2>
+            <p>
+              Good day! At <strong>IT SIMPLE</strong>, we believe learning goes
+              beyond the classroom. That's why we're thrilled to welcome our new
+              On-the-Job Training (OJT) students.
+            </p>
+            <p>
+              Through this program, trainees gain
+              <strong>hands on experience in IT operations</strong>—from
+              troubleshooting and system management to workflow optimization and
+              project collaboration. It's a chance to apply classroom knowledge
+              to real-world situations.
+            </p>
+            <p>
+              Our goal is to prepare OJT students for future careers in
+              technology by providing practical experience, guidance, and
+              exposure to industry practices.
+            </p>
+            <p>
+              <strong
+                >Ready to grow in your IT journey? At IT SIMPLE, we're here to
+                support your success.</strong
+              >
+            </p>
+            <button class="apply-btn">APPLY NOW</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      window.onscroll = function () {
+        const nav = document.querySelector("header");
+        if (window.scrollY > 50) nav.classList.add("scrolled");
+        else nav.classList.remove("scrolled");
+      };
+    </script>
+  </body>
+</html>

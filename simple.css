@@ -1,0 +1,265 @@
+/* --- 1. CORE STYLES & RESET --- */
+:root {
+  --bg-white: #ffffff;
+  --bg-gray: #f2f2f2;
+  --text-black: #000000;
+  --text-gray: #555555;
+  --border-color: #e0e0e0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--bg-white);
+  color: var(--text-black);
+  /* FIX: Changed from 150vh to 100vh to stop the extra scrolling */
+  min-height: 100vh;
+  position: relative;
+}
+
+/* --- 2. STATIC BACKGROUND --- */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("background2.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  z-index: -1;
+  opacity: 1; /* Always visible now */
+}
+
+/* --- 3. NAVIGATION --- */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  transition: all 0.4s ease;
+  color: var(--text-black); /* Default text color */
+}
+
+/* THE SCROLL DOWN PART: Black background and White text */
+header.scrolled {
+  background: #000000;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  padding: 15px 50px;
+}
+
+/* Flips the logo to white when the background is black */
+header.scrolled .nav-logo {
+  filter: invert(1) brightness(2);
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+.nav-logo {
+  height: 35px;
+  transition: filter 0.4s ease;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+nav a {
+  text-decoration: none;
+  color: inherit; /* Links will follow header color (black or white) */
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  transition: 0.3s;
+}
+nav a.active {
+  font-weight: 700;
+  border-bottom: 2px solid black;
+}
+
+/* Turns active border white when scrolled */
+header.scrolled nav a.active {
+  border-bottom-color: #ffffff;
+}
+
+/* --- 4. HERO SECTION (HOME) --- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Takes up exactly one screen height */
+  text-align: center;
+}
+.main-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(80px, 15vw, 200px);
+  letter-spacing: 20px;
+  transform: scaleX(0.6) scaleY(1.4);
+}
+.reflected-text {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(80px, 15vw, 200px);
+  opacity: 0.1;
+  transform: scaleX(0.7) scaleY(-1.2);
+  margin-top: 40px;
+}
+.tagline {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(18px, 4vw, 40px);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: -40px;
+}
+
+.quotation-callout-box {
+  margin-top: 50px;
+  background-color: var(--bg-gray);
+  padding: 30px 40px;
+  border-radius: 4px;
+  max-width: 500px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #ddd;
+}
+
+/* --- 5. PRODUCTS (PRODUCT.HTML) --- */
+.updates-hero {
+  padding-top: 150px; /* Space to clear fixed navbar */
+  text-align: center;
+}
+.updates-hero h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 48px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+.product-container {
+  padding: 40px 20px 60px; /* Reduced top padding so it sits under the title */
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+.card {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  padding: 35px 20px;
+  width: 200px;
+  text-align: center;
+  transition: 0.3s;
+  border-radius: 4px;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+.brand-logo img {
+  max-width: 120px;
+  margin-bottom: 15px;
+}
+
+/* --- 6. CONTACT (CONTACT.HTML) --- */
+.contact-page-wrapper {
+  padding: 160px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-external-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.section-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 48px;
+  letter-spacing: 8px;
+  margin-bottom: 10px;
+}
+.contact-container {
+  background: white;
+  max-width: 1100px;
+  width: 100%;
+  padding: 40px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+.contact-content-grid {
+  display: flex;
+  gap: 40px;
+}
+.map-box {
+  flex: 1.3;
+  border: 1px solid #eee;
+  overflow: hidden;
+}
+.info-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+}
+.info-item {
+  display: flex;
+  gap: 15px;
+}
+.info-item strong {
+  display: block;
+  font-size: 11px;
+  font-family: "Montserrat", sans-serif;
+}
+.info-item p {
+  font-size: 14px;
+  color: #444;
+}
+
+/* --- 7. BUTTONS --- */
+.quotation-button {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 18px;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+.quotation-button:hover {
+  background: #000;
+}
+
+@media (max-width: 900px) {
+  .contact-content-grid {
+    flex-direction: column;
+  }
+  .card {
+    width: 45%;
+  }
+}
