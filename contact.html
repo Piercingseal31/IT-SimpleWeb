@@ -2,40 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us | IT Simple Solutions Inc.</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="simple.css" />
   </head>
   <body>
-    <header id="main-header">
-      <div class="logo-section">
-        <img
-          src="simple_logo-removebg-preview.png"
-          alt="Logo"
-          class="nav-logo"
-        />
-        <span>IT SIMPLE SOLUTIONS INC.</span>
-      </div>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="contact.html" class="active">Contact</a>
-        <a href="updates.html">Updates</a>
-      </nav>
-    </header>
+    <script src="navbar-loader.js"></script>
 
-    <main class="contact-page-content">
-      <section class="contact-section">
-        <h2 class="section-title">CONTACT US</h2>
+    <main class="contact-page-wrapper">
+      <div class="contact-external-header">
+        <h1 class="section-title">CONTACT US</h1>
         <p class="contact-intro">
-          PLEASE FREE TO VISIT, EMAIL OR CONTACT US VIA LANDLINE.
+          PLEASE FEEL FREE TO VISIT, EMAIL OR CONTACT US VIA LANDLINE.
         </p>
-        <p class="contact-sub">CLICK THE BUTTON TO GET A FREE QUOTATION.</p>
-
-        <div class="contact-container">
+      </div>
+      <div class="contact-container">
+        <div class="contact-content-grid">
           <div class="map-box">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.321856230419!2d123.88975931123136!3d10.315006489765274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a99949514658df%3A0xe54b1f479d2b2715!2sAVON%20Plaza!5e0!3m2!1sen!2sph!4v1708680000000"
@@ -44,47 +29,44 @@
               style="border: 0"
               allowfullscreen=""
               loading="lazy"
-            >
-            </iframe>
+            ></iframe>
           </div>
 
           <div class="info-box">
             <div class="info-item">
               <span class="icon">🌐</span>
-              <p>
+              <div>
                 <strong>LOCATION:</strong>
-                <a
-                  href="https://www.google.com/maps/place/IT+SIMPLE+SOLUTIONS+INC./@10.3154096,123.8856399,17z/data=!3m1!4b1!4m6!3m5!1s0x33a9999804e07cab:0x9f64e89904ec1c72!8m2!3d10.3154044!4d123.8905108!16s%2Fg%2F11rfpwp_71?entry=ttu&g_ep=EgoyMDI2MDIyMy4wIKXMDSoASAFQAw%3D%3D"
-                  target="_blank"
-                  class="location-link"
-                >
+                <p>
                   Avon Plaza Building, 3rd Floor, Room 05, No. 55 Don Gil
-                  Garcia, Capitol Site, Cebu City >Avon Plaza Building, 3rd
-                  Floor, Room 05, No. 55 Don Gil Garcia, Capitol Site, Cebu
-                  City</a
-                >
-              </p>
+                  Garcia, Capitol Site, Cebu City
+                </p>
+              </div>
             </div>
             <div class="info-item">
               <span class="icon">✉️</span>
-              <p><strong>EMAIL:</strong> support@itssimple.ph</p>
+              <div>
+                <strong>EMAIL:</strong>
+                <p>support@itssimple.ph</p>
+              </div>
             </div>
             <div class="info-item">
               <span class="icon">📞</span>
-              <p><strong>LANDLINE:</strong> +032 511-2835</p>
+              <div>
+                <strong>LANDLINE:</strong>
+                <p>+032 511-2835</p>
+              </div>
             </div>
-            <button class="quotation-button">QUOTATION</button>
+
+            <a
+              href="quotation.html"
+              style="text-decoration: none; margin-top: 10px"
+            >
+              <button class="quotation-button">QUOTATION</button>
+            </a>
           </div>
         </div>
-      </section>
+      </div>
     </main>
-
-    <script>
-      window.onscroll = function () {
-        const nav = document.querySelector("header");
-        if (window.scrollY > 50) nav.classList.add("scrolled");
-        else nav.classList.remove("scrolled");
-      };
-    </script>
   </body>
 </html>

@@ -2,56 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IT Simple Solutions Inc. | Home</title>
+    <title>Home | IT Simple Solutions Inc.</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&family=Montserrat:wght@400;700&family=Open+Sans:wght@400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Montserrat:wght@600;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="simple.css" />
   </head>
   <body>
-    <header id="main-header">
-      <div class="logo-section">
-        <img
-          src="simple_logo-removebg-preview.png"
-          alt="IT Simple Logo"
-          class="nav-logo"
-        />
-        <span>IT SIMPLE SOLUTIONS INC.</span>
-      </div>
-      <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="contact.html">Contact</a>
-        <a href="updates.html">Updates</a>
-      </nav>
-    </header>
+    <script src="navbar-loader.js"></script>
 
     <main class="hero">
-      <div class="hero-container">
-        <div class="title-wrapper">
-          <div class="it-badge"><span>IT</span></div>
-          <h1 class="main-title">SiMPLE</h1>
-        </div>
-        <div class="reflected-text">SOLUTiONS</div>
-        <p class="tagline">Making IT Simple</p>
-      </div>
+      <h1 class="main-title">SiMPLE</h1>
+      <div class="reflected-text">SOLUTiONS</div>
 
-      <div class="contact-section">
-        <p class="contact-text">Feel free to contact us for a quotation</p>
-        <button class="quotation-button">Quotation</button>
-      </div>
+      <h2 class="tagline-bold">MAKING I.T SIMPLE</h2>
+      <p class="sub-tagline">FEEL FREE TO CONTACT US FOR A QUOTATION</p>
+
+      <a
+        href="quotation.html"
+        style="text-decoration: none; width: 100%; max-width: 800px"
+      >
+        <button class="quotation-button-wide">QUOTATION</button>
+      </a>
     </main>
-
-    <script>
-      window.onscroll = function () {
-        const nav = document.querySelector("header");
-        if (window.scrollY > 50) {
-          nav.classList.add("scrolled");
-        } else {
-          nav.classList.remove("scrolled");
-        }
-      };
-    </script>
   </body>
 </html>

@@ -11,21 +11,7 @@
     <link rel="stylesheet" href="simple.css" />
   </head>
   <body>
-    <header id="main-header">
-      <div class="logo-section">
-        <img
-          src="simple_logo-removebg-preview.png"
-          alt="Logo"
-          class="nav-logo"
-        />
-        <span>IT SIMPLE SOLUTIONS INC.</span>
-      </div>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="contact.html">Contact</a>
-        <a href="updates.html" class="active">Updates</a>
-      </nav>
-    </header>
+    <script src="navbar-loader.js"></script>
 
     <main>
       <section class="updates-hero">
@@ -38,6 +24,7 @@
             <img src="updatepicture.jpg" alt="We Are Accepting OJTs!" />
             <p class="date">February 11, 2026</p>
           </div>
+
           <div class="news-content">
             <h2>We Are Accepting OJTs!</h2>
             <p>
@@ -47,15 +34,13 @@
             </p>
             <p>
               Through this program, trainees gain
-              <strong>hands on experience in IT operations</strong>—from
+              <strong>hands-on experience in IT operations</strong>—from
               troubleshooting and system management to workflow optimization and
-              project collaboration. It's a chance to apply classroom knowledge
-              to real-world situations.
+              project collaboration.
             </p>
             <p>
-              Our goal is to prepare OJT students for future careers in
-              technology by providing practical experience, guidance, and
-              exposure to industry practices.
+              Our goal is to prepare OJT students for future careers by
+              providing practical experience and exposure to industry practices.
             </p>
             <p>
               <strong
@@ -63,18 +48,16 @@
                 support your success.</strong
               >
             </p>
-            <button class="apply-btn">APPLY NOW</button>
+
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSc07U_GdlcZ2MWjoHOpv6iXOosIqjOUB_ervrWeBsFkn2GHRQ/viewform?usp=dialog"
+              style="text-decoration: none"
+            >
+              <button class="apply-btn">APPLY NOW</button>
+            </a>
           </div>
         </div>
       </section>
     </main>
-
-    <script>
-      window.onscroll = function () {
-        const nav = document.querySelector("header");
-        if (window.scrollY > 50) nav.classList.add("scrolled");
-        else nav.classList.remove("scrolled");
-      };
-    </script>
   </body>
 </html>
