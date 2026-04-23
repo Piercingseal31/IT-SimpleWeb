@@ -102,12 +102,50 @@ nav a.active {
   text-align: center;
   padding: 0 20px;
 }
+
 .main-title {
   font-family: "Playfair Display", serif;
   font-size: clamp(80px, 15vw, 200px);
   letter-spacing: 20px;
   transform: scaleX(0.6) scaleY(1.4);
+  /* REQUIRED: Anchor for the circle */
+  position: relative;
+  display: inline-block;
+  z-index: 5;
 }
+
+/* THE CIRCLE WITH "IT" TEXT */
+.main-title::before {
+  content: "IT";
+  position: absolute;
+
+  /* Circle Styling */
+  width: 24px;
+  height: 24px;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 50%;
+
+  /* Center text inside */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Font Styling */
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0;
+
+  /* Adjust Position - Pushes it left of the 'S' */
+  top: 5%;
+  left: -42px;
+  z-index: 10;
+
+  /* Counter-scale to keep circle perfectly round */
+  transform: scaleX(1.66) scaleY(0.71);
+}
+
 .reflected-text {
   font-family: "Playfair Display", serif;
   font-size: clamp(80px, 15vw, 200px);
@@ -116,6 +154,7 @@ nav a.active {
   margin-top: 40px;
   margin-bottom: 20px;
 }
+
 .tagline-bold {
   font-family: "Montserrat", sans-serif;
   font-size: clamp(30px, 6vw, 72px);
@@ -272,7 +311,7 @@ nav a.active {
   background: #333;
   color: #fff;
   border: none;
-  padding: 15px; /* Compact height */
+  padding: 15px;
   width: 100%;
   font-weight: bold;
   cursor: pointer;
@@ -358,5 +397,98 @@ nav a.active {
   }
   .card {
     width: 45%;
+  }
+}
+
+/* --- MOBILE NAVIGATION STYLES --- */
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 2px;
+  background-color: currentColor;
+  transition: 0.3s;
+}
+
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background-color: #1a1a1a;
+  z-index: 2000;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar-header {
+  margin-bottom: 40px;
+}
+
+.close-btn {
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.sidebar-links a {
+  color: white;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.sidebar-links a.active {
+  font-weight: 700;
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1500;
+  display: none;
+}
+
+.sidebar-overlay.active {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  #nav-links {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  header {
+    padding: 15px 25px;
   }
 }
