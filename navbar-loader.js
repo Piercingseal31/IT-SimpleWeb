@@ -9,18 +9,17 @@
 
 const navbarHTML = `
 <header id="main-header">
-  <div class="logo-section">
+  <a href="index.html" class="logo-section">
     <img src="simple_logo-removebg-preview.png" alt="IT Simple Logo" class="nav-logo" />
     <span>IT SIMPLE SOLUTIONS INC.</span>
-  </div>
+  </a>
   
   <nav id="nav-links">
     <a href="index.html">Home</a>
+    <a href="product.html">Products</a>
     <a href="contact.html">Contact</a>
     <a href="updates.html">Updates</a>
-    <div class="dropdown">
-      <a href="product.html">About Us <span class="arrow">⌵</span></a>
-    </div>
+    <a href="about.html">About Us</a>
   </nav>
 
   <div class="mobile-menu-toggle" id="menu-open">
@@ -36,9 +35,10 @@ const navbarHTML = `
   </div>
   <nav class="sidebar-links">
     <a href="index.html">Home</a>
+    <a href="product.html">Products</a>
     <a href="contact.html">Contact</a>
     <a href="updates.html">Updates</a>
-    <a href="product.html">⌵ About Us</a>
+    <a href="about.html">About Us</a>
   </nav>
 </div>
 <div class="sidebar-overlay" id="overlay"></div>
@@ -73,5 +73,6 @@ overlay.addEventListener("click", toggleMenu);
 // Scroll logic for black background switch
 window.addEventListener("scroll", () => {
   const isScrolled = window.scrollY > 50;
-  document.querySelector("header").classList.toggle("scrolled", isScrolled);
+  const header = document.querySelector("header");
+  if (header) header.classList.toggle("scrolled", isScrolled);
 });
