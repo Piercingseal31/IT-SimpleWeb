@@ -204,12 +204,16 @@ nav a.active {
 
 /* --- 5. PRODUCTS --- */
 .updates-hero {
-  padding-top: 150px;
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  padding-top: 80px;
 }
 .updates-hero h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: 48px;
+  font-size: 100px;
   letter-spacing: 10px;
   text-transform: uppercase;
 }
@@ -255,9 +259,8 @@ nav a.active {
 
 .contact-hero h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(60px, 12vw, 150px);
-  font-weight: 800;
-  letter-spacing: 15px;
+  font-size: 100px;
+  letter-spacing: 10px;
   text-transform: uppercase;
 }
 
@@ -531,9 +534,8 @@ nav a.active {
 
 .about-hero h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(40px, 12vw, 150px); /* Updated min size for mobile fit */
-  font-weight: 800;
-  letter-spacing: 12px; /* Slight reduction for default spacing */
+  font-size: 100px;
+  letter-spacing: 10px;
   text-transform: uppercase;
 }
 
@@ -545,10 +547,10 @@ nav a.active {
 }
 
 .bar-white {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgb(255, 255, 255);
 }
 .bar-grey {
-  background-color: rgba(244, 244, 244, 0.95);
+  background-color: rgb(255, 255, 255);
 }
 
 /* ALIGNMENT LOGIC */
@@ -680,5 +682,36 @@ nav a.active {
     padding: 25px;
     border-left-width: 6px; /* Slightly thinner accent for mobile */
     border-right-width: 6px;
+  }
+}
+
+/* --- ADDED CSS FOR LOTTIE INTEGRATION --- */
+.container-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 50px;
+}
+.container-flex.reverse {
+  flex-direction: row-reverse;
+}
+.text-content {
+  flex: 1;
+}
+.lottie-container {
+  flex: 0 0 350px; /* Adjust size of animation here */
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 900px) {
+  .container-flex,
+  .container-flex.reverse {
+    flex-direction: column !important;
+  }
+  .lottie-container {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 250px;
   }
 }

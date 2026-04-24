@@ -76,3 +76,7 @@ window.addEventListener("scroll", () => {
   const header = document.querySelector("header");
   if (header) header.classList.toggle("scrolled", isScrolled);
 });
+
+// Dynamic Footer Loader
+const footerHTML = `<div class="page-bottom-text">Made by Frances Tingga @ IT Simple Solutions Inc. © 2026</div>`;
+document.body.insertAdjacentHTML("beforeend", footerHTML);
