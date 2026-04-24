@@ -102,7 +102,6 @@ nav a.active {
   justify-content: center;
   min-height: 100vh;
   text-align: center;
-  /* Top padding (120px) brings the text down from the header */
   padding: 120px 20px 150px;
   position: relative;
 }
@@ -118,7 +117,6 @@ nav a.active {
   z-index: 5;
 }
 
-/* THE "IT" CIRCLE BRANDING (Transparent with Thick Border) */
 .main-title::before {
   content: "IT";
   position: absolute;
@@ -126,9 +124,9 @@ nav a.active {
   left: -75px;
   width: 50px;
   height: 50px;
-  background-color: transparent; /* See-through */
-  border: 2px solid #000; /* Thick border */
-  color: #000; /* Black text */
+  background-color: transparent;
+  border: 2px solid #000;
+  color: #000;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -188,20 +186,6 @@ nav a.active {
   background: #000000;
 }
 
-/* THE SCROLLING BOTTOM RIGHT TEXT (Goes with the page) */
-.page-bottom-text {
-  position: absolute;
-  bottom: 30px;
-  right: 40px;
-  font-family: "Montserrat", sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--text-black);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  opacity: 0.5;
-}
-
 /* --- 5. PRODUCTS --- */
 .updates-hero {
   height: 45vh;
@@ -217,6 +201,7 @@ nav a.active {
   letter-spacing: 10px;
   text-transform: uppercase;
 }
+
 .product-container {
   padding: 40px 20px 60px;
   max-width: 1300px;
@@ -226,30 +211,90 @@ nav a.active {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
 }
 .card {
   background: #fff;
   border: 1px solid var(--border-color);
-  padding: 35px 20px;
-  width: 200px;
+  padding: 40px 20px;
+  width: 250px;
   text-align: center;
-  transition: 0.3s;
   border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  min-height: 350px;
 }
+
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transform: scale(1.3) translateY(-5px);
+  background: #d5d2d2;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+  color: #000;
 }
+.brand-logo {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
 .brand-logo img {
-  max-width: 120px;
-  margin-bottom: 15px;
+  max-width: 150px;
+  max-height: 70px;
+  width: auto;
+  height: auto;
+}
+
+.card h3 {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 25px;
+  margin-top: 5px;
+  width: 90%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  color: #222;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.card p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #888;
+  margin-top: 10px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.qr-card {
+  background-color: #fafafa;
+}
+
+.qr-placeholder img {
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+
+.details-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-top: 15px;
 }
 
 /* --- CONTACT PAGE SPECIFIC --- */
 
 .contact-hero {
-  height: 45vh; /* Matches about-hero */
+  height: 45vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -265,12 +310,12 @@ nav a.active {
 }
 
 .contact-page-wrapper {
-  padding: 40px 10%; /* Consistent with section-bar padding */
+  padding: 40px 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 55vh;
-  background-color: rgba(255, 255, 255, 0.9); /* Bar-white effect */
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .contact-intro {
@@ -293,21 +338,10 @@ nav a.active {
   border-radius: 4px;
 }
 
-/* Responsive Grid */
 .contact-content-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: 40px;
-}
-
-@media (max-width: 900px) {
-  .contact-content-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-hero {
-    height: 30vh;
-  }
 }
 
 .info-item {
@@ -489,40 +523,7 @@ nav a.active {
   display: block;
 }
 
-@media (max-width: 900px) {
-  .news-card {
-    flex-direction: column;
-  }
-  .contact-content-grid {
-    flex-direction: column;
-  }
-  .card {
-    width: 45%;
-  }
-}
-
-@media (max-width: 768px) {
-  #nav-links {
-    display: none;
-  }
-
-  .mobile-menu-toggle {
-    display: flex;
-  }
-
-  header {
-    padding: 15px 25px;
-  }
-
-  .page-bottom-text {
-    right: 20px;
-    bottom: 20px;
-    font-size: 8px;
-  }
-}
-
 /* --- 10. ABOUT US / SERVICES PAGE --- */
-
 .about-hero {
   height: 45vh;
   display: flex;
@@ -541,7 +542,7 @@ nav a.active {
 
 .section-bar {
   width: 100%;
-  padding: 80px 10%; /* Provides the viewport-aligned gutter */
+  padding: 80px 10%;
   display: flex;
   flex-direction: column;
 }
@@ -553,7 +554,6 @@ nav a.active {
   background-color: rgb(255, 255, 255);
 }
 
-/* ALIGNMENT LOGIC */
 .center-align {
   align-items: center;
   text-align: center;
@@ -573,7 +573,7 @@ nav a.active {
   font-weight: 800;
   line-height: 1.3;
   max-width: 1100px;
-  margin-bottom: 60px; /* Space between headline and list title */
+  margin-bottom: 60px;
 }
 
 .list-title {
@@ -587,7 +587,7 @@ nav a.active {
 .combined-list {
   list-style: none;
   padding: 0;
-  text-align: left; /* Keeps list items left-aligned within the centered container */
+  text-align: left;
   display: inline-block;
 }
 
@@ -607,7 +607,6 @@ nav a.active {
   color: #000;
 }
 
-/* Info blocks for Hardware, Network, etc. */
 .section-bar h3 {
   font-family: "Montserrat", sans-serif;
   font-size: 32px;
@@ -626,7 +625,6 @@ nav a.active {
   padding: 40px 50px;
 }
 
-/* Thick accent borders from reference image */
 .left-align p {
   border-left: 10px solid #000;
 }
@@ -634,55 +632,22 @@ nav a.active {
   border-right: 10px solid #000;
 }
 
+/* --- 10. FIXED FOOTER POSITIONING --- */
 .page-bottom-text {
-  padding: 40px 10%;
-  text-align: right;
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
   font-family: "Montserrat", sans-serif;
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
   opacity: 0.5;
-}
-
-/* --- MOBILE ABOUT PAGE FIXES --- */
-@media (max-width: 768px) {
-  .about-hero {
-    height: 30vh;
-  }
-
-  .about-hero h1 {
-    font-size: 45px;
-    letter-spacing: 4px; /* Reduced to fit mobile screen width */
-  }
-
-  .section-bar {
-    padding: 40px 5%; /* Reduced padding to give content more room */
-  }
-
-  .about-headline {
-    font-size: 22px;
-    margin-bottom: 30px;
-  }
-
-  .list-title {
-    font-size: 20px;
-  }
-
-  .combined-list li {
-    font-size: 15px;
-  }
-
-  .section-bar h3 {
-    font-size: 22px;
-  }
-
-  .section-bar p {
-    font-size: 15px;
-    padding: 25px;
-    border-left-width: 6px; /* Slightly thinner accent for mobile */
-    border-right-width: 6px;
-  }
+  color: var(--text-black);
+  z-index: 10;
+  /* Removes padding that might interfere with absolute positioning */
+  padding: 0;
+  text-align: right;
 }
 
 /* --- ADDED CSS FOR LOTTIE INTEGRATION --- */
@@ -700,18 +665,120 @@ nav a.active {
   flex: 1;
 }
 .lottie-container {
-  flex: 0 0 350px; /* Adjust size of animation here */
+  flex: 0 0 350px;
   display: flex;
   justify-content: center;
 }
+
+/* ==========================================================================
+   NEW MEDIA QUERIES FOR ALL CONTENT PAGES
+   ========================================================================== */
+
 @media (max-width: 900px) {
+  /* All Content Hero Titles */
+  .updates-hero h1,
+  .contact-hero h1,
+  .about-hero h1 {
+    font-size: clamp(40px, 8vw, 70px);
+    letter-spacing: 5px;
+  }
+
+  /* Content Containers and Grids */
+  .contact-content-grid,
+  .news-card,
   .container-flex,
   .container-flex.reverse {
     flex-direction: column !important;
+    grid-template-columns: 1fr;
   }
+
   .lottie-container {
     flex: 0 0 auto;
     width: 100%;
     max-width: 250px;
+    margin: 20px 0;
+  }
+
+  .news-image {
+    height: 300px;
+  }
+
+  .news-content {
+    padding: 30px 20px;
+  }
+
+  .news-content h2 {
+    font-size: 32px;
+  }
+
+  /* Product Cards adjustments for tablets */
+  .card {
+    width: 45%;
+    min-height: auto;
+  }
+
+  .card:hover {
+    transform: scale(1.05) translateY(-5px); /* Scale down hover on touch screens */
+  }
+
+  /* Quotation Iframe Scaling */
+  .form-box {
+    padding: 10px;
+  }
+
+  .form-box iframe {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #nav-links {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  header {
+    padding: 15px 25px;
+  }
+
+  .page-bottom-text {
+    right: 0 !important;
+    bottom: 20px !important;
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 8px !important;
+    padding: 5px 10px 5px 10px !important;
+  }
+
+  /* About Page Hero fix */
+  .about-hero {
+    height: 30vh;
+  }
+
+  .about-hero h1 {
+    font-size: 45px;
+    letter-spacing: 4px;
+  }
+
+  /* Section Bars padding reduction */
+  .section-bar,
+  .contact-page-wrapper {
+    padding: 40px 5%;
+  }
+
+  .section-bar p {
+    font-size: 15px;
+    padding: 25px;
+    border-left-width: 6px;
+    border-right-width: 6px;
+  }
+
+  /* Product Cards: Full width on mobile phones */
+  .card {
+    width: 100%;
+    max-width: 300px;
   }
 }
