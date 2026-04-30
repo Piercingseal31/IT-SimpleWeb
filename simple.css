@@ -1,11 +1,39 @@
 /* --- 1. CORE STYLES & RESET --- */
+/* --- 1. CORE STYLES & RESET --- */
 :root {
+  /* EDIT THESE TWO NUMBERS TO SCALE THE WHOLE SITE */
+  --fs-base: 18px; /* Standard paragraphs and links */
+  --fs-large: 22px; /* For larger descriptive text like the Quotation list */
+
   --bg-white: #ffffff;
   --bg-gray: #f2f2f2;
   --text-black: #000000;
   --text-gray: #555555;
   --border-color: #e0e0e0;
   --bg-button: #444444;
+}
+
+/* --- UNIVERSAL TEXT SCALING (EXCLUDING TITLES) --- */
+
+/* Standard Body Text & Links */
+nav a,
+.sub-tagline,
+.info-item p,
+.news-content p,
+.card p,
+.service-card p,
+.details-link,
+.details-text,
+.apply-btn,
+.quotation-design-button {
+  font-size: var(--fs-base) !important;
+}
+
+/* Larger Body Text & Lists */
+.combined-list li,
+.section-bar p,
+.quotation-card-link p {
+  font-size: var(--fs-large) !important;
 }
 
 * {
@@ -216,6 +244,7 @@ nav a.active {
 .card {
   background: #fff;
   border: 1px solid var(--border-color);
+  border-color: #cccccc;
   padding: 40px 20px;
   width: 250px;
   text-align: center;
@@ -223,10 +252,25 @@ nav a.active {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 !important; /* Move padding to the link for full clickability */
+  overflow: hidden;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
   min-height: 350px;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit; /* Keeps your text black/gray */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 30px 20px; /* This is your original card padding */
+  cursor: pointer;
 }
 
 .card:hover {
@@ -289,6 +333,12 @@ nav a.active {
   font-size: 12px;
   text-transform: uppercase;
   margin-top: 15px;
+}
+.details-text {
+  margin-top: 15px;
+  font-weight: 600;
+  color: var(--primary-color); /* Or your preferred link color */
+  text-decoration: underline;
 }
 
 /* --- CONTACT PAGE SPECIFIC --- */
@@ -399,7 +449,7 @@ nav a.active {
 .news-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 .date {
@@ -635,7 +685,7 @@ nav a.active {
 /* --- 10. FIXED FOOTER POSITIONING --- */
 .page-bottom-text {
   position: absolute;
-  bottom: 30px;
+  bottom: 10px;
   right: 40px;
   font-family: "Montserrat", sans-serif;
   font-size: 10px;
@@ -780,5 +830,260 @@ nav a.active {
   .card {
     width: 100%;
     max-width: 300px;
+  }
+}
+
+/* ==========================================================================
+   SERVICES PAGE: SPECIFIC CSS
+   ========================================================================== */
+
+/* 1. BACKGROUND & WRAPPER LOGIC */
+.services-page {
+  background-color: #f2f2f2 !important; /* The white background that "peeks" */
+  position: relative;
+}
+
+.services-page::before {
+  display: none !important; /* Hides the schematic image from other pages */
+}
+
+.services-wrapper {
+  /* EDIT THIS: Increase to show more white background at the top */
+  margin-top: 70px;
+
+  /* EDIT THIS: Change the color of the main content area */
+  background-color: #ffffff;
+
+  padding: 0px 0 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* 2. WIDTH CONTROL (The Container) */
+.services-wrapper .product-container {
+  /* EDIT THIS NUMBER: 
+     Increase (e.g., 1400px) to make cards wider.
+     Decrease (e.g., 1000px) to make cards thinner. */
+  max-width: 1600px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* 3. HEIGHT & CARD LOGIC */
+.service-card {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  padding: 40px 20px;
+
+  /* LOCKS 4 PER ROW: Keep this at 25% to prevent breaking the layout */
+  width: calc(25% - 20px);
+
+  /* EDIT THIS NUMBER: Change card height freely */
+  min-height: 220px;
+
+  text-align: center;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. INTERNAL CARD ELEMENTS */
+.service-brand-logo {
+  /* Adjust this height to move icons up or down */
+  height: 120px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.service-brand-logo img {
+  /* Adjust these to change icon size within the card */
+  max-width: 150px;
+  max-height: 90px;
+}
+
+.service-card h3 {
+  border-top: 1px solid #e0e0e0; /* The thin horizontal line */
+  padding-top: 25px;
+  margin-top: 5px;
+  width: 85%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: #222;
+  text-transform: uppercase;
+}
+
+.service-card p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  color: #666;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+.quotation-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 40px; /* Space above and below the card */
+}
+
+.quotation-card {
+  background: #fff;
+  border: 1px solid var(--border-color);
+
+  /* Width Control: Wide and centralized */
+  width: 100%;
+  max-width: 3000px;
+  padding: 0px 0px;
+  min-height: 250px;
+  border-radius: 4px;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+  display: flex;
+}
+
+.quotation-card-link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  /* Space between text and the card borders */
+  padding: 10px 10px;
+
+  cursor: pointer;
+  color: inherit;
+  text-align: center;
+}
+
+.quotation-card:hover {
+  transform: scale(1.02);
+  background: #fdfdfd;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* The Empty Space/Line Logic */
+.quotation-spacer {
+  height: 1px;
+  background: #e0e0e0;
+  width: 60%; /* The horizontal line width */
+  margin: 20px 0;
+}
+
+.quotation-card-link h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  color: #222;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.quotation-card-link p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  color: #555;
+  line-height: 1.8; /* Increased for better readability of the list */
+  max-width: 900px; /* Keeps the text from stretching too far horizontally */
+}
+.quotation-design-button {
+  background-color: #525050; /* Match your site's dark accents */
+  color: #fff;
+  width: 100%;
+  max-width: 1000px;
+  padding: 15px 0px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 2px;
+  transition: background 0.3s ease;
+}
+/* 5. RESPONSIVE FIX (Prevents cards from squashing too much on mobile) */
+@media (max-width: 1024px) {
+  .services-wrapper {
+    padding: 40px 3% 80px; /* Reduced side margins to give cards more room */
+  }
+
+  .service-card-link {
+    padding: 30px 15px; /* Tighter internal space */
+  }
+
+  .service-card h3 {
+    font-size: 15px; /* Scaling down the title */
+  }
+}
+
+/* 2. MOBILE LANDSCAPE (Under 768px) */
+@media (max-width: 768px) {
+  .service-card {
+    /* Maintaining 4 per row as requested */
+    width: calc(25% - 10px) !important;
+    min-height: 320px;
+  }
+
+  .service-brand-logo {
+    height: 50px; /* Shorter empty space to save vertical room */
+  }
+
+  .service-card h3 {
+    font-size: 13px;
+    padding-top: 15px;
+    letter-spacing: 0.5px;
+  }
+
+  .service-card p {
+    font-size: 11px;
+    line-height: 1.4;
+    margin-top: 10px;
+  }
+}
+
+/* 3. SMALL MOBILE PHONES (Under 480px) */
+@media (max-width: 480px) {
+  .services-wrapper {
+    margin-top: 40px; /* Peeking background gets smaller on tiny screens */
+    padding: 20px 2% 60px;
+  }
+
+  .service-card {
+    /* The gap (-5px) gets smaller so cards don't fall off the screen */
+    width: calc(25% - 5px) !important;
+    min-height: 280px;
+  }
+
+  .service-card-link {
+    padding: 20px 5px; /* Extremely tight padding for 4-column mobile */
+  }
+
+  .service-card h3 {
+    font-size: 10px; /* Smallest readable size for 4-per-row */
+    width: 100%;
+  }
+
+  /* Optional: Hides description on small phones to keep the 4-column grid clean */
+  .service-card p {
+    display: none;
   }
 }

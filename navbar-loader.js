@@ -78,5 +78,5 @@ window.addEventListener("scroll", () => {
 });
 
 // Dynamic Footer Loader
-const footerHTML = `<div class="page-bottom-text">Made by Frances Tingga @ IT Simple Solutions Inc. © 2026</div>`;
+const footerHTML = `<div class="page-bottom-text">Made by Tingga F. © IT Simple Solutions Inc. © 2026</div>`;
 document.body.insertAdjacentHTML("beforeend", footerHTML);
